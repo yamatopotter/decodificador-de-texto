@@ -9,6 +9,8 @@
   --default-border-radius: 24px;
   --darker-blue: #0a3871;
   --darker-blue-hover: #062447;
+  --gray: #d8dfe8;
+  --gray-hover: #a2a9b3;
   --white: #efefef;
   --pale-blue: #f3f5fc;
   --black: #0f0f0f;
@@ -39,7 +41,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap:1rem
+  gap: 1rem;
 }
 
 textarea {
@@ -51,11 +53,14 @@ textarea {
   font-size: 2rem;
   font-family: "Inter", sans-serif;
   line-height: 2.5rem;
-  color: var(--darker-blue)
+  color: var(--darker-blue);
 }
 
-.observacao{
-    font-size: 0.75rem;
+.observacao {
+  font-size: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  color: #495057;
 }
 
 .buttonWrapper {
@@ -70,20 +75,25 @@ textarea {
   width: 100%;
   border: 1px solid var(--darker-blue);
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .botao-criptografar {
   background-color: var(--darker-blue);
   color: var(--white);
-  transition: background-color 0.2s ease-in-out;
 }
 
-.botao-criptografar:hover{
-    background-color: var(--darker-blue-hover)
+.botao-criptografar:hover {
+  background-color: var(--darker-blue-hover);
 }
 
 .botao-descriptografar {
   color: var(--darker-blue);
+  background-color: var(--gray);
+}
+
+.botao-descriptografar:hover {
+  background-color: var(--gray-hover);
 }
 
 aside {
