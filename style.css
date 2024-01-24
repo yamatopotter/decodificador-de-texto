@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --default-border-radius: 24px;
+  --darker-blue: #0a3871;
+  --darker-blue-hover: #062447;
+  --white: #efefef;
+  --pale-blue: #f3f5fc;
+  --black: #0f0f0f;
+}
+
+/* Classes generalistas para o layout */
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 3rem 0;
+  display: flex;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+body {
+  background-color: var(--pale-blue);
+}
+
+nav {
+  padding: 2rem;
+}
+
+main {
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap:1rem
+}
+
+textarea {
+  background-color: transparent;
+  border: 0;
+  resize: none;
+  width: 100%;
+  height: calc(100vh - 19.5rem);
+  font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  line-height: 2.5rem;
+  color: var(--darker-blue)
+}
+
+.observacao{
+    font-size: 0.75rem;
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.botao {
+  border-radius: 24px;
+  font-size: 1rem;
+  padding: 1.5rem;
+  width: 100%;
+  border: 1px solid var(--darker-blue);
+  cursor: pointer;
+}
+
+.botao-criptografar {
+  background-color: var(--darker-blue);
+  color: var(--white);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.botao-criptografar:hover{
+    background-color: var(--darker-blue-hover)
+}
+
+.botao-descriptografar {
+  color: var(--darker-blue);
+}
+
+aside {
+  background-color: #fff;
+  border-radius: var(--default-border-radius);
+  padding: 3rem;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
