@@ -5,13 +5,19 @@
   font-family: "Inter", sans-serif;
 }
 
+*:focus {
+  outline: none;
+  border-bottom: 2px solid var(--darker-blue);
+}
+
 :root {
   --default-border-radius: 24px;
   --darker-blue: #0a3871;
   --darker-blue-hover: #062447;
   --gray: #d8dfe8;
   --gray-hover: #a2a9b3;
-  --white: #efefef;
+  --darker-gray: #495057;
+  --white: #fff;
   --pale-blue: #f3f5fc;
   --black: #0f0f0f;
 }
@@ -28,6 +34,12 @@
   min-height: 100vh;
 }
 
+.hide {
+  display: none !important;
+}
+
+/* Estilo da página */
+
 body {
   background-color: var(--pale-blue);
 }
@@ -41,6 +53,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
+  flex: 1;
   gap: 1rem;
 }
 
@@ -49,7 +62,7 @@ textarea {
   border: 0;
   resize: none;
   width: 100%;
-  height: calc(100vh - 19.5rem);
+  height: calc(100vh - 21.25rem);
   font-size: 2rem;
   font-family: "Inter", sans-serif;
   line-height: 2.5rem;
@@ -75,7 +88,7 @@ textarea {
   width: 100%;
   border: 1px solid var(--darker-blue);
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .botao-criptografar {
@@ -94,16 +107,56 @@ textarea {
 
 .botao-descriptografar:hover {
   background-color: var(--gray-hover);
+  color: var(--white)
+}
+
+.botao-copiar{
+    background-color: var(--white);
+    color: var(--darker-blue)
+}
+
+.botao-copiar:hover{
+    background-color: var(--darker-blue);
+    color: var(--white)
 }
 
 aside {
   background-color: #fff;
   border-radius: var(--default-border-radius);
-  padding: 3rem;
-  max-width: 400px;
+  padding: 2rem;
+  width: 400px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
+  position: relative;
+}
+
+.nadaEncontrado {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--darker-gray);
+}
+
+.nadaEncontrado img {
+  width: 100%;
+}
+
+.nadaEncontrado h2 {
+  font-size: 1.25rem;
+}
+
+.mostrarMensagemTrabalhada{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.mensagemTrabalhada {
+  font-size: 1.25rem;
+  line-height: 2.25rem;
+  color: var(--darker-gray);
+  flex:1;
 }

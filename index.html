@@ -36,19 +36,34 @@
         </div>
 
         <div class="buttonWrapper">
-          <button class="botao botao-criptografar" onClick="criptografarMensagem()">Criptografar</button>
-          <button class="botao botao-descriptografar" onClick="descriptografarMensagem()">Descriptografar</button>
+          <button
+            class="botao botao-criptografar"
+            onClick="criptografarMensagem()"
+          >
+            Criptografar
+          </button>
+          <button
+            class="botao botao-descriptografar"
+            onClick="descriptografarMensagem()"
+          >
+            Descriptografar
+          </button>
         </div>
       </main>
 
       <aside>
-        <p id="mensagemTrabalhada"></p>
-        <img
-          src="./assets/img/nada-encontrado.png"
-          alt="Pessoa ajoelhada com uma lupa na mão olhando para um diamante com cara de surpresa"
-        />
-        <h2>Nenhuma mensagem encontrada</h2>
-        <p>Digite um texto que você deseja criptografar ou descriptografar</p>
+        <div id="mostrarMensagemTrabalhada" class="mostrarMensagemTrabalhada hide">
+            <p id="mensagemTrabalhada" class="mensagemTrabalhada"></p>
+            <button class="botao botao-copiar" onclick="copiarMensagem()">Copiar mensagem</button>
+        </div>
+        <div class="nadaEncontrado" id="nadaEncontrado">
+          <img
+            src="./assets/img/nada-encontrado.png"
+            alt="Pessoa ajoelhada com uma lupa na mão olhando para um diamante com cara de surpresa"
+          />
+          <h2>Nenhuma mensagem encontrada</h2>
+          <p>Digite um texto que você deseja criptografar ou descriptografar</p>
+        </div>
       </aside>
     </div>
     <script src="assets/js/app.js"></script>
