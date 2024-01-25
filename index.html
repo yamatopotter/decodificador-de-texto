@@ -23,8 +23,8 @@
 
       <main>
         <textarea
-          name="textoParaTrabalhar"
-          id="textoParaTrabalhar"
+          name="mensagem"
+          id="mensagem"
           placeholder="Digite seu texto"
         ></textarea>
 
@@ -35,13 +35,13 @@
         </div>
 
         <div class="buttonWrapper">
-          <button class="botao botao-criptografar">Criptografar</button>
-          <button class="botao botao-descriptografar">Descriptografar</button>
+          <button class="botao botao-criptografar" onClick="criptografarMensagem()">Criptografar</button>
+          <button class="botao botao-descriptografar" onClick="descriptografarMensagem()">Descriptografar</button>
         </div>
       </main>
 
       <aside>
-        <p id="textoAposTrabalho"></p>
+        <p id="mensagemTrabalhada"></p>
         <img
           src="./assets/img/nada-encontrado.png"
           alt="Pessoa ajoelhada com uma lupa na mão olhando para um diamante com cara de surpresa"
@@ -50,5 +50,6 @@
         <p>Digite um texto que você deseja criptografar ou descriptografar</p>
       </aside>
     </div>
+    <script src="assets/js/app.js"></script>
   </body>
 </html>
