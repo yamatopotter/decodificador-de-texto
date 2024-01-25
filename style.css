@@ -107,17 +107,17 @@ textarea {
 
 .botao-descriptografar:hover {
   background-color: var(--gray-hover);
-  color: var(--white)
+  color: var(--white);
 }
 
-.botao-copiar{
-    background-color: var(--white);
-    color: var(--darker-blue)
+.botao-copiar {
+  background-color: var(--white);
+  color: var(--darker-blue);
 }
 
-.botao-copiar:hover{
-    background-color: var(--darker-blue);
-    color: var(--white)
+.botao-copiar:hover {
+  background-color: var(--darker-blue);
+  color: var(--white);
 }
 
 aside {
@@ -131,6 +131,8 @@ aside {
   justify-content: center;
   gap: 2rem;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 .nadaEncontrado {
@@ -148,15 +150,59 @@ aside {
   font-size: 1.25rem;
 }
 
-.mostrarMensagemTrabalhada{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+.mostrarMensagemTrabalhada {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .mensagemTrabalhada {
   font-size: 1.25rem;
   line-height: 2.25rem;
   color: var(--darker-gray);
-  flex:1;
+  flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  main {
+    padding-top: 2rem;
+    flex: 0;
+  }
+
+  textarea{
+    height: calc(100vh - 35rem)
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  aside img {
+    display: none;
+  }
+
+  aside p{
+    margin-bottom: 2rem;
+    word-break: break-all;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .buttonWrapper{
+    flex-direction: column;
+    gap:1.25rem;
+  }
+
+  textarea{
+    margin-bottom: 2rem;
+  }
+
+  aside p{
+    word-break: break-all;
+  }
 }
