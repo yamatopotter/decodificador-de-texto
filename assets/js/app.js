@@ -35,3 +35,11 @@ function criptografarMensagem() {
 
   showMensagem(mensagem);
 }
+
+function limparMensagemTrabalhada(){
+    const mensagem = getMensagem();
+
+    if(mensagem.length==0){
+        showMensagem(mensagem);
+    }
+}
