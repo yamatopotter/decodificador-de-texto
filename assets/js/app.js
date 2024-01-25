@@ -11,8 +11,17 @@ function getMensagem() {
   return mensagem;
 }
 
-function showMensagem(mensagem) {
-  const mensagemTrabalhada = document.getElementById("mensagemTrabalhada");
+function showNadaEncontrado() {
+  const mostrarMensagemTrabalhada = document.getElementById(
+    "mostrarMensagemTrabalhada"
+  );
+  const nadaEncontrado = document.getElementById("nadaEncontrado");
+
+  nadaEncontrado.classList.remove("hide");
+  mostrarMensagemTrabalhada.classList.add("hide");
+}
+
+function showMensagem() {
   const mostrarMensagemTrabalhada = document.getElementById(
     "mostrarMensagemTrabalhada"
   );
@@ -20,18 +29,29 @@ function showMensagem(mensagem) {
 
   nadaEncontrado.classList.add("hide");
   mostrarMensagemTrabalhada.classList.remove("hide");
+}
+
+function displayMensagem(mensagem) {
+  const mensagemTrabalhada = document.getElementById("mensagemTrabalhada");
+  showMensagem();
 
   mensagemTrabalhada.innerText = mensagem;
 }
 
 function descriptografarMensagem() {
-  let mensagem = getMensagem();
+  const aux = getMensagem();
+  let mensagem = aux;
 
   for (const key in caracteresCriptografia) {
     mensagem = mensagem.replaceAll(caracteresCriptografia[key], key);
   }
 
-  showMensagem(mensagem);
+  if (aux !== mensagem) {
+    displayMensagem(mensagem);
+    return;
+  }
+
+  displayMensagem("Essa mensagem já se encontra descriptografada");
 }
 
 function criptografarMensagem() {
@@ -41,7 +61,7 @@ function criptografarMensagem() {
     mensagem = mensagem.replaceAll(key, caracteresCriptografia[key]);
   }
 
-  showMensagem(mensagem);
+  displayMensagem(mensagem);
 }
 
 // codigo retirado do W3Schools
@@ -54,12 +74,15 @@ function copiarMensagem() {
 
   // Exibe um alert para a cópia do texto
   alert("Mensagem copiada: " + mensagemTrabalhada.innerText);
-} 
+}
 
-function limparMensagemTrabalhada(){
-    const mensagem = getMensagem();
+function limparMensagemTrabalhada() {
+  const mensagem = getMensagem();
 
-    if(mensagem.length==0){
-        showMensagem(mensagem);
-    }
+  if (mensagem.length > 0) {
+    displayMensagem(mensagem);
+    return;
+  }
+
+  showNadaEncontrado();
 }
